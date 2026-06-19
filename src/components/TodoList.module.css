@@ -1,0 +1,6 @@
+.list {
+  list-style: none;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
