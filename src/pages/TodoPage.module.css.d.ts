@@ -1,6 +1,8 @@
 declare const styles: {
   readonly page: string;
   readonly container: string;
+  readonly themeBar: string;
+  readonly themeToggle: string;
   readonly header: string;
   readonly logo: string;
   readonly title: string;
