@@ -62,5 +62,5 @@
 
 .clearBtn:hover {
   color: var(--color-danger);
-  background: #fee2e2;
+  background: var(--color-danger-light);
 }

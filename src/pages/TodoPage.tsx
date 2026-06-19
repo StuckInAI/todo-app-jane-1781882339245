@@ -1,11 +1,19 @@
+import type { ReactElement } from 'react';
 import styles from './TodoPage.module.css';
 import { useTodos } from '@/hooks/useTodos';
 import TodoInput from '@/components/TodoInput';
 import TodoList from '@/components/TodoList';
 import TodoFooter from '@/components/TodoFooter';
-import { CheckSquare } from 'lucide-react';
+import { CheckSquare, Moon, Sun } from 'lucide-react';
 
-export default function TodoPage() {
+type Theme = 'light' | 'dark';
+
+type TodoPageProps = {
+  theme: Theme;
+  onToggleTheme: () => void;
+};
+
+export default function TodoPage({ theme, onToggleTheme }: TodoPageProps): ReactElement {
   const {
     todos,
     filteredTodos,
@@ -21,9 +29,25 @@ export default function TodoPage() {
     completedCount,
   } = useTodos();
 
+  const themeLabel: string = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+
   return (
     <div className={styles.page}>
       <div className={styles.container}>
+        <div className={styles.themeBar}>
+          <button
+            type="button"
+            className={styles.themeToggle}
+            onClick={onToggleTheme}
+            aria-label={themeLabel}
+            aria-pressed={theme === 'dark'}
+            title={themeLabel}
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            <span>{theme === 'dark' ? 'Light' : 'Dark'} theme</span>
+          </button>
+        </div>
+
         <header className={styles.header}>
           <div className={styles.logo}>
             <CheckSquare size={32} color="var(--color-primary)" />

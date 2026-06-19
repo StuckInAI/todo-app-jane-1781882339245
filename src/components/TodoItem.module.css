@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: center;
   transition: border-color var(--transition), background var(--transition);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 .checkCircle:hover {
@@ -102,7 +102,7 @@
 }
 
 .deleteBtn:hover {
-  background: #fee2e2;
+  background: var(--color-danger-light);
   color: var(--color-danger);
 }
 
@@ -111,7 +111,7 @@
 }
 
 .confirmBtn:hover {
-  background: #dcfce7;
+  background: var(--color-success-light);
   color: var(--color-success);
 }
 
@@ -120,7 +120,7 @@
 }
 
 .cancelBtn:hover {
-  background: #fee2e2;
+  background: var(--color-danger-light);
   color: var(--color-danger);
 }
 
